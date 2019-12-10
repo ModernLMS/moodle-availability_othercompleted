@@ -5,4 +5,6 @@ This plugin allow to restrict access of activities and resources in your course 
 Documentation:-
 https://www.mu.my/en/documentation/plugins/moodle-other-course-completion-restriction-plugin
 
+Author:-
+Sam Suresh
 

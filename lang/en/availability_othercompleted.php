@@ -33,4 +33,4 @@ $string['pluginname'] = 'Restriction by other course completion';
 $string['requires_incomplete'] = 'You have incompleted course <strong>{$a}</strong>';
 $string['requires_complete'] = 'You have completed course <strong>{$a}</strong>';
 $string['title'] = 'Other course completion';
-$string['privacy:metadata'] = 'The Restriction by activity completion plugin does not store any personal data.';
+$string['privacy:metadata'] = 'The Restriction by other course completion plugin does not store any personal data.';

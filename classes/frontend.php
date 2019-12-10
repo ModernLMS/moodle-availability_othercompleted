@@ -53,13 +53,15 @@ class frontend extends \core_availability\frontend {
             $context = \context_course::instance($course->id);
             //get all course name
             $datcms = array();
-            $modinfo = get_courses();
-            foreach ($modinfo as $othercm) {
+            $course = get_courses();
+            foreach ($course as $othercm) {
                 //disable not created course and default course
                 if(($othercm->category > 0) && ($othercm->id != $course->id)){
-                        $datcms[] = (object)array('id' => $othercm->id,
-                'name' => format_string($othercm->fullname, true, array('context' => $context)),
-                'completiongradeitemnumber' => $othercm->completiongradeitemnumber);
+                        $datcms[] = (object)array(
+                            'id' => $othercm->id,
+                            'name' => format_string($othercm->fullname, true, array('context' => $context))
+                            // 'completiongradeitemnumber' => $othercm->completiongradeitemnumber
+                        );
                 }
             }
             $this->cachekey = $cachekey;
