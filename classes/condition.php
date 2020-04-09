@@ -81,19 +81,19 @@ class condition extends \core_availability\condition {
 
     public function is_available($not, \core_availability\info $info, $grabthelot, $userid) {
         //get course completion details to allow preview
-        
+
         global $DB;
 
         $course = $this->cmid;
         $user = $DB->get_record('course_completions', array('userid'=> $userid, 'course'=> $course));
-        
+
         //if data is available means user has been completed course
         if($user->id > 0 && $user->timecompleted != NULL){
 
-            $allow = true; 
+            $allow = true;
         }
         else{
-            $allow = false; 
+            $allow = false;
         }
 
         return $allow;
@@ -118,16 +118,10 @@ class condition extends \core_availability\condition {
         }
     }
 
-    //get details restrict access 
+    //get details restrict access
     public function get_description($full, $not, \core_availability\info $info) {
         // Get name for module.
-        $modc = get_courses();
-
-        foreach ($modc as $modcs) {
-            if($modcs->id == $this->cmid){
-                $modname = $modcs->fullname;
-            }
-        }
+        $modname = $DB->get_record('course', ['id' => $this->cmid])->fullname;
 
         // Work out which lang string to use.
         if ($not) {
@@ -147,7 +141,7 @@ class condition extends \core_availability\condition {
         } else {
             $str = 'requires_' . self::get_lang_string_keyword($this->expectedcompletion);
         }
-        
+
         return get_string($str, 'availability_othercompleted', $modname);
     }
 
