@@ -120,6 +120,7 @@ class condition extends \core_availability\condition {
 
     //get details restrict access
     public function get_description($full, $not, \core_availability\info $info) {
+      global $DB;
         // Get name for module.
         $modname = $DB->get_record('course', ['id' => $this->cmid])->fullname;
 
