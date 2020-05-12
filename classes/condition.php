@@ -203,7 +203,8 @@ class condition extends \core_availability\condition {
             self::$modsusedincondition[$course->id] = array();
 
             // Activities.
-            foreach ($modinfo->datcm as $othercm) {
+            // foreach ($modinfo->datcm as $othercm) {
+            foreach ($modinfo->cms as $othercm) {
                 if (is_null($othercm->availability)) {
                     continue;
                 }

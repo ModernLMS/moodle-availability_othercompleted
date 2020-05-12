@@ -25,11 +25,11 @@ YUI.add('moodle-availability_othercompleted-form', function (Y, NAME) {
     
     M.availability_othercompleted.form.getNode = function(json) {
         // Create HTML structure.
-        var html = '<span class="col-form-label p-r-1"> ' + M.util.get_string('title', 'availability_othercompleted') + '</span>' +
-                   ' <span class="availability-group form-group"><label>' +
-                '<span class="accesshide">' + M.util.get_string('label_cm', 'availability_othercompleted') + ' </span>' +
-                '<select class="custom-select" name="cm" title="' + M.util.get_string('label_cm', 'availability_othercompleted') + '">' +
-                '<option value="0">' + M.util.get_string('choosedots', 'moodle') + '</option>';
+        var html =  '<span class="col-form-label p-r-1"> ' + M.util.get_string('title', 'availability_othercompleted') + '</span>' +
+                    '<span class="availability-group form-group"><label>' +
+                    '<span class="accesshide">' + M.util.get_string('label_cm', 'availability_othercompleted') + ' </span>' +
+                    '<select class="custom-select" name="cm" title="' + M.util.get_string('label_cm', 'availability_othercompleted') + '">' +
+                    '<option value="0">' + M.util.get_string('choosedots', 'moodle') + '</option>';
         for (var i = 0; i < this.datcms.length; i++) {
             var cm = this.datcms[i];
             // String has already been escaped using format_string.
