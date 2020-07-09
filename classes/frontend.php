@@ -38,7 +38,7 @@ class frontend extends \core_availability\frontend {
     protected $cachekey = '';
 
     protected function get_javascript_strings() {
-        return array('option_complete', 'label_cm', 'label_completion');
+        return array('option_complete', 'option_incomplete', 'label_cm', 'label_completion');
     }
 
     protected function get_javascript_init_params($course, \cm_info $cm = null,
