@@ -86,7 +86,7 @@ class condition extends \core_availability\condition {
 
         $course = $this->cmid;
         $user = $DB->get_record('course_completions', array('userid'=> $userid, 'course'=> $course));
-        
+
         //if data is available means user has been completed course
         if($user->id > 0 && $user->timecompleted != NULL){
 
@@ -94,6 +94,11 @@ class condition extends \core_availability\condition {
         }
         else{
             $allow = false; 
+        }
+
+        // Check expected completion use has not complete the course
+        if ($this->expectedcompletion === 0) {
+            $allow = !$allow;
         }
 
         return $allow;
