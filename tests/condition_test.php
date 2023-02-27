@@ -40,7 +40,7 @@ class availability_othercompleted_condition_testcase extends advanced_testcase {
     /**
      * include class needed
      */
-    public function setUp() {
+    public function setUp(): void {
         // include class information mock to use.
         global $CFG;
         require_once($CFG->dirroot . '/availability/tests/fixtures/mock_info.php');
