@@ -39,7 +39,6 @@ M.availability_othercompleted.form.getNode = function(json) {
             ' </span><select class="custom-select" ' +
                             'name="e" title="' + M.util.get_string('label_completion', 'availability_othercompleted') + '">' +
             '<option value="1">' + M.util.get_string('option_complete', 'availability_othercompleted') + '</option>' +
-            '<option value="0">' + M.util.get_string('option_incomplete', 'availability_othercompleted') + '</option>' +
             '</select></label></span>';
     var node = Y.Node.create('<span class="form-inline">' + html + '</span>');
 
