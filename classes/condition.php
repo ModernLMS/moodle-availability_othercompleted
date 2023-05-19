@@ -80,7 +80,6 @@ class condition extends \core_availability\condition {
     }
 
     public function is_available($not, \core_availability\info $info, $grabthelot, $userid) {
-        //get course completion details to allow preview
         
         global $DB;
 
@@ -89,7 +88,7 @@ class condition extends \core_availability\condition {
         $datacompletes = $DB->get_records_sql($sqlcoursecomplete);
         $allow = false;
         foreach($datacompletes as $datacomplete){
-            //if data is available means datacomplete has been completed course
+
             if($datacomplete->timecompleted>0){
                 $allow = true; 
             }
@@ -116,7 +115,6 @@ class condition extends \core_availability\condition {
         }
     }
 
-    //get details restrict access 
     public function get_description($full, $not, \core_availability\info $info) {
         // Get name for module.
         $modc = get_courses();

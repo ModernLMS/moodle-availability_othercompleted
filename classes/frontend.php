@@ -51,15 +51,15 @@ class frontend extends \core_availability\frontend {
             // Get list of activities on course which have completion values,
             // to fill the dropdown.
             $context = \context_course::instance($course->id);
-            //get all course name
+            // get all course name
             $datcms = array();
             global $DB;
             $sql2 = "SELECT * FROM {course} 
                     ORDER BY fullname ASC";
             $other = $DB->get_records_sql($sql2);
-            //$other = get_courses();
+            // $other = get_courses();
             foreach ($other as $othercm) {
-                //disable not created course and default course
+                // disable not created course and default course
                 if(($othercm->category > 0) && ($othercm->id != $course->id)){
                         $datcms[] = (object)array(
                             'id' => $othercm->id,
