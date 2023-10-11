@@ -9,6 +9,9 @@ Moodle 3.6+
 
 
 # Installation
+
+
+# Documentation
 Documentation:-
 https://www.mu.my/en/documentation/plugins/moodle-other-course-completion-restriction-plugin
 
