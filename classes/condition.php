@@ -93,6 +93,10 @@ class condition extends \core_availability\condition {
                 $allow = true; 
             }
         }
+
+        if ($not) {
+            $allow = !$allow;
+        }
         return $allow;
     }
 
